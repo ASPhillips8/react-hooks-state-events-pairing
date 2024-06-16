@@ -1,7 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 
 function VideoDetails({videoDetails}) {
   const {title, embedUrl, views, createdAt, upvotes, downvotes} = videoDetails
+  const [upVotes, setUpVotes] = useState(upvotes)
+  const [downVotes, setDownVotes] = useState(downvotes)
+
+  const handleUpVotes = () => setUpVotes(upVotes + 1)
+  const handleDownVotes = () => setDownVotes(downVotes + 1)
 
   return (
     <div className="video-detail">
@@ -15,8 +20,8 @@ function VideoDetails({videoDetails}) {
       />
       <h1>{title}</h1>
       <p>{views} Views | Uploaded {createdAt}</p>
-      <button>{upvotes} "👍"</button>
-      <button>{downvotes} "👎"</button>
+      <button onClick={handleUpVotes}>{upVotes} "👍"</button>
+      <button onClick={handleDownVotes}>{downVotes} "👎"</button>
     </div>
   );
 }
