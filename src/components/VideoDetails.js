@@ -20,8 +20,8 @@ function VideoDetails({videoDetails}) {
       />
       <h1>{title}</h1>
       <p>{views} Views | Uploaded {createdAt}</p>
-      <button onClick={handleUpVotes}>{upVotes} "👍"</button>
-      <button onClick={handleDownVotes}>{downVotes} "👎"</button>
+      <button onClick={handleUpVotes}>{upVotes} 👍 </button>
+      <button onClick={handleDownVotes}>{downVotes} 👎 </button>
     </div>
   );
 }

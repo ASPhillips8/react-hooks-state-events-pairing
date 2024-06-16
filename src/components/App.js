@@ -1,13 +1,17 @@
 import React from "react";
 import VideoDetails from "./VideoDetails.js";
 import video from "../data/video.js";
-
+import CommentList from "./CommentList.jsx";
 
 function App() {
 
   return (
     <div className="App">
       <VideoDetails videoDetails={video}/>
+      <br></br>
+      <button>Hide Comments</button>
+      <hr />
+      <CommentList comments={video.comments}/>
     </div>
   );
 }
