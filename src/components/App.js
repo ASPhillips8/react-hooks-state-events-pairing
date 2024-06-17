@@ -1,22 +1,22 @@
-import React, {useState} from "react";
-import VideoDetails from "./VideoDetails.js";
-import video from "../data/video.js";
-import CommentList from "./CommentList.jsx";
+import React, { useState } from "react";
+import VideoDetails from "./VideoDetails";
+import video from "../data/video";
+import CommentList from "./CommentList";
 
 function App() {
-  const [hideComments, setHideComments] = useState(true)
+  const [showComments, setShowComments] = useState(true)
 
   function handleHideComments() {
-    setHideComments(!hideComments)
+    setShowComments(!showComments)
   }
-  console.log(video)
+
   return (
     <div className="App">
       <VideoDetails videoDetails={video}/>
       <br></br>
-      <button onClick={handleHideComments}>{hideComments ? "Hide Comments" : "Show Comments"}</button>
+      <button onClick={handleHideComments}>{showComments ? "Hide Comments" : "Show Comments"}</button>
       <hr />
-      {hideComments && <CommentList comments={video.comments}/>}
+      {showComments && <CommentList comments={video.comments}/>}
     </div>
   );
 }
