@@ -6,14 +6,10 @@ import CommentList from "./CommentList.jsx";
 function App() {
   const [hideComments, setHideComments] = useState(true)
 
-  console.log("app:", hideComments)
-
   function handleHideComments() {
     setHideComments(!hideComments)
   }
-
-
-
+  console.log(video)
   return (
     <div className="App">
       <VideoDetails videoDetails={video}/>

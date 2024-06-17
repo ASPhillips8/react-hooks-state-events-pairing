@@ -2,10 +2,21 @@ import React, {useState} from "react";
 import Comment from "./Comment";
 
 function CommentList({comments}) {
+  const [updateComments, setUpdateComments] = useState(comments)
 
-  const displayedComments = comments.map((comment) => {
+  function handleCommentDelete(id) {
+    const updatedCommentList = updateComments.filter((comment) => comment.id !== id)
+    setUpdateComments(updatedCommentList)
+
+  }
+
+  const displayedComments = updateComments.map((comment) => {
     return (
-      <Comment key={comment.id} commentDetails={comment}/>
+      <Comment
+        key={comment.id}
+        commentDetails={comment}
+        onDelete={handleCommentDelete}
+      />
     )
   })
 
